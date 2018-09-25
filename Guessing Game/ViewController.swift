@@ -74,7 +74,7 @@ class ViewController: UIViewController {
             
         } else if userGuesses! == randomNumber {
 
-           WinLabel.text = "Congrats on the sex! Please tap the restart button if you want to play again."
+           WinLabel.text = "Congrats you won! Please tap the restart button if you want to play again."
             
             playerWins += 1
             

@@ -86,6 +86,8 @@ class ViewController: UIViewController {
             
             Reset.isHidden = false
             
+            self.view.backgroundColor = UIColor.green
+            
             
             
         } else if userGuesses! > randomNumber {
@@ -109,6 +111,15 @@ class ViewController: UIViewController {
                 playerLosses += 1
                 
                 RecordLabel.text = "Record: \(playerWins)-\(playerLosses)"
+                
+                } else if counter == 3 {
+                    
+                    self.view.backgroundColor = UIColor.yellow
+                    
+            } else if counter == 1 {
+                
+                self.view.backgroundColor = UIColor.red
+                
                 
             } else {
                 
@@ -138,6 +149,14 @@ class ViewController: UIViewController {
                 
                 Reset.isHidden = false
                 
+            } else if counter == 3 {
+                
+                self.view.backgroundColor = UIColor.yellow
+                
+            } else if counter == 1 {
+                
+                self.view.backgroundColor = UIColor.red
+                
             } else {
                 
                 WinLabel.text = "Guess higher!"
@@ -152,6 +171,7 @@ class ViewController: UIViewController {
         counter = 5
         
         randomNumber = Int(arc4random_uniform(100) + 1)
+        
         SendGuess.isHidden = false
         
         UserGuess.isHidden = false
@@ -163,6 +183,8 @@ class ViewController: UIViewController {
         UserGuess.text = ""
         
         WinLabel.text = ""
+        
+        self.view.backgroundColor = UIColor.white
         
     }
     

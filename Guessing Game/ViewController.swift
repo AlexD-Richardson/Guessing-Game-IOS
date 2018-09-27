@@ -9,6 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var time = Timer()
+    
+    var colorArray = [UIColor.red, .blue, .green, .yellow, .orange, .magenta, .purple]
+    
+    var newGame = false
 
     @IBOutlet weak var GuessLabel: UILabel!
 
@@ -32,14 +38,16 @@ class ViewController: UIViewController {
     
     var playerLosses = 0
     
-    var randomNumber = Int(arc4random_uniform(100) + 1)
+    var maxNumber: Int!
+    
+    var randomNumber: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        GuessLabel.text = "Guess a number between 1 and 100! You will only get 5 tries. Good luck!"
+        GuessLabel.text = "Guess a number between 1 and \(maxNumber!) You will only get 5 tries. Good luck!"
         
         NumOfTries.text = "Attempts left: \(counter)"
         
@@ -57,6 +65,12 @@ class ViewController: UIViewController {
         
         view.addGestureRecognizer(tap)
         
+        if let max = maxNumber {
+            randomNumber = Int.random(in: 1..<max)
+        } else {
+            randomNumber = Int(arc4random_uniform(100)) + 1
+        }
+        
     }
 
     @IBAction func buttonTapped(_ sender: Any) {
@@ -67,12 +81,22 @@ class ViewController: UIViewController {
         
         guard userGuesses != nil else { return WinLabel.text = "Please enter in a number!"}
         
-        
-        if userGuesses! > 100 || userGuesses! < 1 {
+        if userGuesses! == 420 {
+            
+            WinLabel.text = "Blaze it bro! The random number is \(randomNumber!)"
+            
+    } else if userGuesses! > maxNumber! || userGuesses! < 1 {
             
             WinLabel.text = "Please enter in a number between 1 and 100"
             
         } else if userGuesses! == randomNumber {
+            
+            newGame = true
+            
+            time = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(winnerBackground), userInfo: nil, repeats: true)
+            
+            
+            time.fire()
 
            WinLabel.text = "Congrats you won! Please tap the restart button if you want to play again."
             
@@ -100,7 +124,7 @@ class ViewController: UIViewController {
             
             if counter == 0 {
                 
-                WinLabel.text = "Game over! The number was \(randomNumber). If you'd like to play again please hit reset!"
+                WinLabel.text = "Game over! The number was \(randomNumber!). If you'd like to play again please hit reset!"
                 
                 UserGuess.isHidden = true
                 
@@ -137,7 +161,7 @@ class ViewController: UIViewController {
             
             if counter == 0 {
                 
-                WinLabel.text = "Game over! The number was \(randomNumber). If you'd like to play again please hit reset!"
+                WinLabel.text = "Game over! The number was \(randomNumber!). If you'd like to play again please hit reset!"
                 
                 playerLosses += 1
                 
@@ -168,9 +192,11 @@ class ViewController: UIViewController {
     }
     @IBAction func resetGame(_ sender: Any) {
         
+        time.invalidate()
+        
         counter = 5
         
-        randomNumber = Int(arc4random_uniform(100) + 1)
+        randomNumber = Int.random(in: 1..<maxNumber!)
         
         SendGuess.isHidden = false
         
@@ -186,6 +212,13 @@ class ViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.white
         
+    }
+    
+    @objc func winnerBackground() {
+        if newGame == true {
+            let randomColor = colorArray[Int(arc4random_uniform(UInt32(colorArray.count)))]
+            self.view.backgroundColor = randomColor
+        }
     }
     
     @objc func dismissKeyboard() {

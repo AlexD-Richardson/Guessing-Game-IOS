@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     var time = Timer()
     
+    var gifTime = Timer()
+    
     var colorArray = [UIColor.red, .blue, .green, .yellow, .orange, .magenta, .purple]
     
     var newGame = false
@@ -31,6 +33,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var WinLabel: UILabel!
 
     @IBOutlet weak var RecordLabel: UILabel!
+    
+    @IBOutlet weak var dancinAndy: UIImageView!
     
     var counter = 5
     
@@ -58,6 +62,12 @@ class ViewController: UIViewController {
         Reset.isHidden = true
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        
+        let gifBackground = UIImage.gifImageWithName("The-Office Andy")
+        
+        dancinAndy.image = gifBackground
+        
+        dancinAndy.isHidden = true
     
         
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
@@ -93,8 +103,15 @@ class ViewController: UIViewController {
             
             newGame = true
             
+            dancinAndy.isHidden = false
+            
             time = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(winnerBackground), userInfo: nil, repeats: true)
             
+            gifTime = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(andyDissapear), userInfo: nil, repeats: false)
+            
+            dancinAndy.image = UIImage.gifImageWithName("The-Office Andy")
+            
+            gifTime.fireDate = Date().addingTimeInterval(2.1)
             
             time.fire()
 
@@ -219,6 +236,10 @@ class ViewController: UIViewController {
             let randomColor = colorArray[Int(arc4random_uniform(UInt32(colorArray.count)))]
             self.view.backgroundColor = randomColor
         }
+    }
+    
+    @objc func andyDissapear() {
+        dancinAndy.isHidden = true
     }
     
     @objc func dismissKeyboard() {

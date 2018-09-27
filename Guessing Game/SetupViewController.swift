@@ -20,6 +20,11 @@ class SetupViewController: UIViewController {
     
     var randomNumberUB: Int!
     
+    @IBOutlet weak var thinkingGIF:
+        UIImageView!
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let viewController = segue.destination as? ViewController {
@@ -47,6 +52,10 @@ class SetupViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         
          view.addGestureRecognizer(tap)
+        
+        let gifBackground = UIImage.gifImageWithName("Deep thought")
+        
+        thinkingGIF.image = gifBackground
 
         // Do any additional setup after loading the view.
     }

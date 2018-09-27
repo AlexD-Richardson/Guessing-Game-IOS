@@ -13,6 +13,9 @@
 		9E0F144B21591B1900280672 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E0F144A21591B1900280672 /* Assets.xcassets */; };
 		9E0F144E21591B1900280672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0F144C21591B1900280672 /* LaunchScreen.storyboard */; };
 		9E440433215AC5B200236F84 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E440432215AC5B200236F84 /* SetupViewController.swift */; };
+		9E440471215D2FC500236F84 /* Deep thought.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9E440470215D2FC500236F84 /* Deep thought.gif */; };
+		9E440473215D2FCD00236F84 /* The-Office Andy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9E440472215D2FCD00236F84 /* The-Office Andy.gif */; };
+		9E440475215D2FFA00236F84 /* GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E440474215D2FFA00236F84 /* GIF.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		9E0F144D21591B1900280672 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E0F144F21591B1900280672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E440432215AC5B200236F84 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		9E440470215D2FC500236F84 /* Deep thought.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "Deep thought.gif"; path = "../../../../../Downloads/Gifs and Pics to use/Deep thought.gif"; sourceTree = "<group>"; };
+		9E440472215D2FCD00236F84 /* The-Office Andy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "The-Office Andy.gif"; path = "../../../../../Downloads/Gifs and Pics to use/The-Office Andy.gif"; sourceTree = "<group>"; };
+		9E440474215D2FFA00236F84 /* GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIF.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +66,12 @@
 				9E0F144521591B1400280672 /* ViewController.swift */,
 				9E0F144721591B1400280672 /* Main.storyboard */,
 				9E0F144A21591B1900280672 /* Assets.xcassets */,
+				9E440472215D2FCD00236F84 /* The-Office Andy.gif */,
+				9E440470215D2FC500236F84 /* Deep thought.gif */,
 				9E0F144C21591B1900280672 /* LaunchScreen.storyboard */,
 				9E0F144F21591B1900280672 /* Info.plist */,
 				9E440432215AC5B200236F84 /* SetupViewController.swift */,
+				9E440474215D2FFA00236F84 /* GIF.swift */,
 			);
 			path = "Guessing Game";
 			sourceTree = "<group>";
@@ -126,6 +135,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E0F144E21591B1900280672 /* LaunchScreen.storyboard in Resources */,
+				9E440473215D2FCD00236F84 /* The-Office Andy.gif in Resources */,
+				9E440471215D2FC500236F84 /* Deep thought.gif in Resources */,
 				9E0F144B21591B1900280672 /* Assets.xcassets in Resources */,
 				9E0F144921591B1400280672 /* Main.storyboard in Resources */,
 			);
@@ -140,6 +151,7 @@
 			files = (
 				9E0F144621591B1400280672 /* ViewController.swift in Sources */,
 				9E440433215AC5B200236F84 /* SetupViewController.swift in Sources */,
+				9E440475215D2FFA00236F84 /* GIF.swift in Sources */,
 				9E0F144421591B1400280672 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -65,6 +65,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="The-Office Andy.gif" translatesAutoresizingMaskIntoConstraints="NO" id="K3h-sI-Per">
+                                <rect key="frame" x="20" y="577" width="374" height="224"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Number" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ldp-1y-Ktb">
                                 <rect key="frame" x="155" y="185" width="105" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -85,6 +89,7 @@
                         <outlet property="SendGuess" destination="6Bg-Tv-ZAb" id="2Kg-Pc-e7t"/>
                         <outlet property="UserGuess" destination="ldp-1y-Ktb" id="vC3-pk-1vs"/>
                         <outlet property="WinLabel" destination="PxE-mr-Xja" id="Bs6-EY-E65"/>
+                        <outlet property="dancinAndy" destination="K3h-sI-Per" id="1sf-Vg-NXt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -107,21 +112,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J6V-9O-2hb">
-                                <rect key="frame" x="142" y="358" width="130" height="30"/>
+                                <rect key="frame" x="142" y="496" width="130" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please enter in a number to set the range of randomly generated number." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffk-x9-0eE">
-                                <rect key="frame" x="20" y="396" width="374" height="60"/>
+                                <rect key="frame" x="20" y="534" width="374" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Deep thought.gif" translatesAutoresizingMaskIntoConstraints="NO" id="GhF-tA-p6g">
+                                <rect key="frame" x="20" y="241" width="374" height="184"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suG-aA-m4b">
-                                <rect key="frame" x="184" y="526" width="47" height="30"/>
+                                <rect key="frame" x="184" y="637" width="47" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play!"/>
                                 <connections>
@@ -138,6 +147,7 @@
                         <outlet property="InstructionLabel" destination="Ffk-x9-0eE" id="rWj-90-FCY"/>
                         <outlet property="Play" destination="suG-aA-m4b" id="bYs-Mq-pGl"/>
                         <outlet property="UpperBoundNumber" destination="J6V-9O-2hb" id="8lB-gB-Wj2"/>
+                        <outlet property="thinkingGIF" destination="GhF-tA-p6g" id="GCc-mM-2nN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DLz-ua-4CY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,4 +173,8 @@
             <point key="canvasLocation" x="-968.11594202898561" y="133.92857142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Deep thought.gif" width="480" height="270"/>
+        <image name="The-Office Andy.gif" width="396" height="223"/>
+    </resources>
 </document>

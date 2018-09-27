@@ -81,9 +81,9 @@ class ViewController: UIViewController {
         
         guard userGuesses != nil else { return WinLabel.text = "Please enter in a number!"}
         
-        if userGuesses! == 420 {
+        if userGuesses! == 1776 {
             
-            WinLabel.text = "Blaze it bro! The random number is \(randomNumber!)"
+            WinLabel.text = "God bless America! George Washinton taps you on your shoulder and hands you a mysterious note. He salutes you and walks away. The random number is \(randomNumber!)"
             
     } else if userGuesses! > maxNumber! || userGuesses! < 1 {
             
